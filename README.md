@@ -177,6 +177,7 @@ Optional policies have the option of being created by default, but are specified
 | unique\_suffix | Enables/disables generation of a unique suffix to cluster name | `bool` | `true` | yes |
 | vpc\_id | VPC ID to create resources in | `string` | n/a | yes |
 | wait_for_capacity_timeout | How long Terraform should wait for ASG instances to be healthy before timing out. | `string` | `"10m"` | no |
+| suspended_processes |  (Optional) A list of processes to suspend for the Auto Scaling Group. The allowed values are Launch, Terminate, HealthCheck, ReplaceUnhealthy, AZRebalance, AlarmNotification, ScheduledActions, AddToLoadBalancer, InstanceRefresh. | `list(string)` | `""` | no |
 
 ## Outputs
 

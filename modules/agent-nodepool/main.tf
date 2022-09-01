@@ -121,6 +121,7 @@ module "nodepool" {
   asg                         = var.asg
   spot                        = var.spot
   wait_for_capacity_timeout   = var.wait_for_capacity_timeout
+  suspended_processes         = var.suspended_processes
 
   tags = merge({
     "Role" = "agent",

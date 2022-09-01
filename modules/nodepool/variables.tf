@@ -83,6 +83,11 @@ variable "asg" {
   })
 }
 
+variable "suspended_processes" {
+  type    = list(string)
+  default = []
+}
+
 variable "spot" {
   default = false
   type    = bool

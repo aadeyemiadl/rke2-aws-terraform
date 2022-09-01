@@ -83,6 +83,11 @@ variable "asg" {
   }
 }
 
+variable "suspended_processes" {
+  type    = list(string)
+  default = []
+}
+
 variable "spot" {
   description = "Toggle spot requests for node pool"
   type        = bool

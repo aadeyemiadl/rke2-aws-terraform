@@ -73,6 +73,11 @@ variable "servers" {
   default     = 1
 }
 
+variable "suspended_processes" {
+  type    = list(string)
+  default = []
+}
+
 variable "spot" {
   description = "Toggle spot requests for server pool"
   type        = bool

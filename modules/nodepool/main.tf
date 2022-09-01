@@ -70,6 +70,8 @@ resource "aws_autoscaling_group" "this" {
 
   min_elb_capacity = var.min_elb_capacity
 
+  suspended_processes = var.suspended_processes
+
   dynamic "launch_template" {
     for_each = var.spot ? [] : ["spot"]
 
