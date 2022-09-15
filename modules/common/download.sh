@@ -67,6 +67,9 @@ do_download() {
     ;;
 
   rhel)
+    yum install -y unzip
+    install_awscli
+    
     case $VERSION in
     7*)
       info "Identified RHEL 7"
