@@ -69,7 +69,16 @@ do_download() {
   rhel)
     yum install -y unzip
     install_awscli
-    
+
+    echo "vm.overcommit_memory=1" >> /etc/sysctl.d/90-kubelet.conf
+    echo "kernel.panic=10" >> /etc/sysctl.d/90-kubelet.conf
+    echo "kernel.panic_on_oops=1" >> /etc/sysctl.d/90-kubelet.conf
+
+    sysctl -p
+
+    adduser etcd
+    groupadd ectd
+
     case $VERSION in
     7*)
       info "Identified RHEL 7"
