@@ -39,7 +39,7 @@ install_awscli() {
   # NOTE: Assumes unzip has already been installed
   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
   unzip -q awscliv2.zip
-  ./aws/install --bin-dir /usr/bin ||true
+  ./aws/install --bin-dir /usr/bin
 }
 
 do_download() {
@@ -68,7 +68,7 @@ do_download() {
 
   rhel)
     yum install -y unzip
-    install_awscli
+    #install_awscli
 
     case $VERSION in
     7*)
