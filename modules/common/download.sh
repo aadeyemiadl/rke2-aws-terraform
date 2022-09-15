@@ -71,9 +71,11 @@ do_download() {
     install_awscli
 
     # Needed for CIS 1.6 profile
-    echo "vm.overcommit_memory=1" >> /etc/sysctl.d/90-kubelet.conf
-    echo "kernel.panic=10" >> /etc/sysctl.d/90-kubelet.conf
-    echo "kernel.panic_on_oops=1" >> /etc/sysctl.d/90-kubelet.conf
+    cat > /etc/sysctl.d/90-kubelet.conf << EOF
+    vm.overcommit_memory=1
+    kernel.panic=10
+    kernel.panic_on_oops=1
+    EOF
     sysctl -p /etc/sysctl.d/90-kubelet.conf
     adduser etcd
     groupadd ectd
