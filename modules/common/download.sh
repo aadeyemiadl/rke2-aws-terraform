@@ -70,12 +70,11 @@ do_download() {
     yum install -y unzip
     install_awscli
 
+    # Needed for CIS 1.6 profile
     echo "vm.overcommit_memory=1" >> /etc/sysctl.d/90-kubelet.conf
     echo "kernel.panic=10" >> /etc/sysctl.d/90-kubelet.conf
     echo "kernel.panic_on_oops=1" >> /etc/sysctl.d/90-kubelet.conf
-
-    sysctl -p
-
+    sysctl -p /etc/sysctl.d/90-kubelet.conf
     adduser etcd
     groupadd ectd
 
