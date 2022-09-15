@@ -52,7 +52,7 @@ EOF
   info "Adding etcd user"
   adduser etcd
   info "Adding etcd group"
-  groupadd ectd
+  groupadd etcd
 }
 
 do_download() {
