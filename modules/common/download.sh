@@ -75,7 +75,7 @@ do_download() {
     vm.overcommit_memory=1
     kernel.panic=10
     kernel.panic_on_oops=1
-    EOF
+EOF
     sysctl -p /etc/sysctl.d/90-kubelet.conf
     adduser etcd
     groupadd ectd
