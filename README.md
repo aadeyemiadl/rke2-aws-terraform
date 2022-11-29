@@ -177,7 +177,8 @@ Optional policies have the option of being created by default, but are specified
 | unique\_suffix | Enables/disables generation of a unique suffix to cluster name | `bool` | `true` | yes |
 | vpc\_id | VPC ID to create resources in | `string` | n/a | yes |
 | wait_for_capacity_timeout | How long Terraform should wait for ASG instances to be healthy before timing out. | `string` | `"10m"` | no |
-
+| tag_specifications.volumes | Uses the var.tag variable.  This is required on PartyBus dev to deploy volume resources.  The launch template will fail with permission errors.  The requirement is team:"teamName".  | `map(string)` | `{}` | no |
+| tag_specifications.instances | Uses the var.tag variable.  This is required on PartyBus dev to deploy instance resources.  The launch template will fail with permission errors. The launch template will fail with permission errors.  The requirement is team:"teamName".  | `map(string)` | `{}` | no |
 ## Outputs
 
 | Name | Description |
